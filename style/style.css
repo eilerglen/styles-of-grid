@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("https://code.s3.yandex.net/web-code/fonts/roboto-200.woff") format("woff");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("https://code.s3.yandex.net/web-code/fonts/roboto-700.woff") format("woff");
+  font-weight: 700;
+}
+.page {
+  display: grid;
+  font-weight: 400;
+  font-size: 20px;
+  font-family: Roboto, Arial, sans-serif;
+  grid-template-areas:
+   "header header header header"
+   "navigation main main banner"
+   "footer footer footer footer";
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.banners {
+  grid-area: banner;
+}
+
+.banners__list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(2, fit-content(70%));
+  gap: 10px;
+  margin: 0;
+ 
+}
+
+.banners__image {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.sidebar {
+  grid-area: navigation;
+}
+
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  background: black;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+
+.content {
+  grid-area: main;
+  background: #fffffb;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(min-content, max-content));
+}
+
+.navigation__list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+} 
+
+.navigation__link {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  display: block;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  padding: 0px 20px 20px;
+}
+
+.navigation__link_active {
+  color: #AFAA56;
+}
+
+.card__image {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.card__list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+.card__link {
+  display: block;
+  border-radius: 5px;
+  font-size: .9em;
+  color: #AFAA56;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  margin: 5px 30px 0 0;
+}
