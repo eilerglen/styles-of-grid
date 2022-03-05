@@ -1,5 +1,11 @@
 @font-face {
   font-family: "Roboto";
+  src: url("https://code.s3.yandex.net/web-code/fonts/roboto-400.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Roboto";
   src: url("https://code.s3.yandex.net/web-code/fonts/roboto-200.woff") format("woff");
   font-weight: 200;
 }
@@ -9,15 +15,16 @@
   src: url("https://code.s3.yandex.net/web-code/fonts/roboto-700.woff") format("woff");
   font-weight: 700;
 }
+
 .page {
   display: grid;
   font-weight: 400;
   font-size: 20px;
   font-family: Roboto, Arial, sans-serif;
   grid-template-areas:
-   "header header header header"
-   "navigation main main banner"
-   "footer footer footer footer";
+   "header header header "
+   "navigation main main"
+   "footer footer footer ";
 }
 
 .header {
@@ -27,32 +34,36 @@
   padding: 20px;
 }
 
+.content {
+  grid-area: main;
+  background: #fffffb;
+  padding: 0 1em 6em 0;
 
-.banners {
-  grid-area: banner;
 }
 
-.banners__list {
-  list-style-type: none;
+.content__row {
   display: grid;
-  grid-template-columns: repeat(2, fit-content(70%));
-  gap: 10px;
-  margin: 0;
- 
+  gap: 1em
 }
 
-.banners__image {
-  max-width: 100%;
-  width: 100%;
-  object-fit: cover;
-  display: block;
-  margin-bottom: 10px;
+.content__row_content_auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+}
+
+.content__row_content_auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
 }
 
 .sidebar {
   grid-area: navigation;
 }
 
+.sidebar__logo {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
 
 .footer {
   grid-area: footer;
@@ -68,12 +79,9 @@
   object-fit: cover;
 }
 
-
-.content {
-  grid-area: main;
-  background: #fffffb;
-  display: grid;
-  grid-template-columns: repeat(1, minmax(min-content, max-content));
+.card__image {
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .navigation__list {
@@ -103,10 +111,7 @@
   color: #AFAA56;
 }
 
-.card__image {
-  max-width: 100%;
-  object-fit: cover;
-}
+
 
 .card__list {
   display: flex;
@@ -123,4 +128,21 @@
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   margin: 5px 30px 0 0;
+}
+
+.card__title {
+  font-weight: 300;
+  font-size: .8em;
+}
+
+.card__description {
+  color: #949494;
+  font-size: .9em;
+}
+
+@media screen and (max-width: 986px) {
+  .page {
+    font-size: 16px;
+    grid-template-rows: 6em auto 6em;
+  }
 }

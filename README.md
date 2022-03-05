@@ -3,7 +3,8 @@
 ## Описание: 
 Отработка некоторых гридовых штучек
 - grid-area
-- функции minmax и fit-content
+- функция minmax 
+- функции auto-fill и auto-fit
 
 ### Технологии:
 1. HTML.
